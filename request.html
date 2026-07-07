@@ -26,7 +26,7 @@
       <h1>Request a Rescue</h1>
       <p class="form-intro">Tell me about the brief. Everything you send is treated as confidential.</p>
 
-      <form action="https://formspree.io/f/mgojqqzw" method="POST" enctype="multipart/form-data">
+      <form action="https://formspree.io/f/mgojqqzw" method="POST">
 
         <div class="field">
           <label for="brief">What's the brief?</label>
@@ -46,13 +46,6 @@
         <div class="field">
           <label for="budget">What's the production budget?</label>
           <input type="text" id="budget" name="What's the production budget" required>
-        </div>
-
-        <div class="field">
-          <label for="upload">Upload the brief
-            <span class="hint">Optional. PDF, deck, or doc.</span>
-          </label>
-          <input type="file" id="upload" name="Upload the brief">
         </div>
 
         <input type="hidden" name="_subject" value="New brief via Boring Brief">
