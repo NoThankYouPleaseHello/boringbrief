@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a Rescue — Boring Brief</title>
+<meta name="description" content="Send your brief for a 48 hour creative sprint.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="wordmark">Boring<span>Brief</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="form-page">
+    <div class="wrap">
+      <a href="index.html" class="back-link">&larr; Back</a>
+      <p class="eyebrow">Get started</p>
+      <h1>Request a Rescue</h1>
+      <p class="form-intro">Tell me about the brief. Everything you send is treated as confidential.</p>
+
+      <!--
+        FORM BACKEND: replace the action URL below with your Formspree
+        endpoint (e.g. https://formspree.io/f/xxxxxxxx) once the account
+        is set up. enctype is required for the file upload field to work.
+      -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+
+        <div class="field">
+          <label for="brief">What's the brief?</label>
+          <textarea id="brief" name="What's the brief" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="deadline">What's the deadline?</label>
+          <input type="text" id="deadline" name="What's the deadline" required>
+        </div>
+
+        <div class="field">
+          <label for="audience">Who's the audience?</label>
+          <input type="text" id="audience" name="Who's the audience" required>
+        </div>
+
+        <div class="field">
+          <label for="budget">What's the production budget?</label>
+          <input type="text" id="budget" name="What's the production budget" required>
+        </div>
+
+        <div class="field">
+          <label for="upload">Upload the brief
+            <span class="hint">Optional. PDF, deck, or doc.</span>
+          </label>
+          <input type="file" id="upload" name="Upload the brief">
+        </div>
+
+        <input type="hidden" name="_subject" value="New brief via Boring Brief">
+
+        <div class="form-submit">
+          <button type="submit" class="btn">Request a Rescue</button>
+        </div>
+      </form>
+
+      <p class="form-footer-note">Submissions go straight to my inbox for personal review, before any call is booked.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    &copy; 2026 Boring Brief
+  </div>
+</footer>
+
+</body>
+</html>
