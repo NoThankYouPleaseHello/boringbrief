@@ -255,6 +255,10 @@ a {
   color: #fff;
 }
 
+.philosophy-scene h2 {
+  font-size: clamp(36px, 6.5vw, 88px);
+}
+
 .philosophy-scene .beat {
   color: rgba(255, 255, 255, 0.82);
 }
@@ -269,6 +273,31 @@ a {
 
 .philosophy-scene .hero-cta {
   margin-top: 56px;
+}
+
+/* Split layout — used by Philosophy and Authority to avoid a
+   thin left-pinned column with dead space on wide viewports */
+
+.split-scene {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 32px 80px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .split-scene {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.split-heading {
+  margin-bottom: 0;
+}
+
+.split-scene .beat-lines {
+  padding-top: 8px;
 }
 
 /* SCENE 3 — RECOGNITION */
@@ -406,13 +435,12 @@ a {
 
 .authority-scene h2 {
   font-size: clamp(32px, 5.6vw, 68px);
-  max-width: 18ch;
-  margin-bottom: 88px;
+  max-width: 14ch;
 }
 
 .authority-lines .beat {
   font-size: clamp(20px, 2.6vw, 30px);
-  max-width: 30ch;
+  max-width: 34ch;
 }
 
 /* TRIGGERS */
