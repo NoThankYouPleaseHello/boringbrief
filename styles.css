@@ -1,13 +1,13 @@
 /* Boring Brief — base styles */
 
 :root {
-  --bg: #faf7f2;
-  --ink: #17140f;
-  --muted: #6b6459;
-  --line: #e7e1d8;
-  --accent: #d94f2b;
-  --accent-ink: #fffaf5;
-  --card: #f2ede4;
+  --bg: #ffffff;
+  --ink: #0d0d0d;
+  --muted: #5a5a5a;
+  --line: #0d0d0d;
+  --accent: #DEFF3C;
+  --accent-ink: #0d0d0d;
+  --card: #f4f4f0;
   --max: 760px;
   --max-wide: 1080px;
 }
@@ -31,11 +31,18 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 600;
-  line-height: 1.1;
+  font-family: "Archivo Black", "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.05;
   margin: 0 0 0.5em;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+h3 {
+  text-transform: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
 }
 
 p {
@@ -65,7 +72,7 @@ img {
 
 section {
   padding: 96px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 3px solid var(--ink);
 }
 
 section:last-of-type {
@@ -73,12 +80,15 @@ section:last-of-type {
 }
 
 .eyebrow {
+  display: inline-block;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--muted);
-  margin: 0 0 16px;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink);
+  background: var(--accent);
+  padding: 6px 12px;
+  margin: 0 0 20px;
 }
 
 /* Header */
@@ -88,16 +98,31 @@ section:last-of-type {
 }
 
 .wordmark {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   text-decoration: none;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 20px;
-  font-weight: 600;
+  font-family: "Archivo Black", "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 0.92;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 
-.wordmark span {
-  color: var(--accent);
+.wordmark .wm-boring {
+  position: relative;
+  display: inline-block;
+}
+
+.wordmark .wm-boring::after {
+  content: "";
+  position: absolute;
+  left: -4%;
+  right: -6%;
+  top: 45%;
+  height: 0.2em;
+  background: var(--accent);
+  transform: rotate(-2deg);
 }
 
 /* Hero */
@@ -108,8 +133,8 @@ section:last-of-type {
 }
 
 .hero h1 {
-  font-size: clamp(38px, 6vw, 64px);
-  max-width: 14ch;
+  font-size: clamp(38px, 6.4vw, 68px);
+  max-width: 16ch;
 }
 
 .hero .lede p {
@@ -136,21 +161,24 @@ section:last-of-type {
 
 .btn {
   display: inline-block;
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--ink);
+  color: #fff;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 17px;
-  padding: 16px 32px;
-  border-radius: 999px;
-  border: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 16px;
+  padding: 17px 34px;
+  border-radius: 4px;
+  border: 2px solid var(--ink);
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .btn:hover {
+  background: var(--accent);
+  color: var(--ink);
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(217, 79, 43, 0.28);
 }
 
 .btn:active {
@@ -177,7 +205,7 @@ section:last-of-type {
 
 .checklist li {
   position: relative;
-  padding-left: 32px;
+  padding-left: 36px;
   margin-bottom: 14px;
   font-size: 19px;
 }
@@ -186,8 +214,17 @@ section:last-of-type {
   content: "✓";
   position: absolute;
   left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  background: var(--ink);
   color: var(--accent);
+  border-radius: 50%;
+  font-size: 12px;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Who for / not for */
@@ -243,9 +280,9 @@ section:last-of-type {
 }
 
 .step-number {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 32px;
-  color: var(--accent);
+  font-family: "Archivo Black", sans-serif;
+  font-size: 30px;
+  color: var(--ink);
   line-height: 1;
 }
 
@@ -281,8 +318,8 @@ section:last-of-type {
 .work-thumb {
   aspect-ratio: 4 / 5;
   background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,8 +328,9 @@ section:last-of-type {
 }
 
 .work-thumb span {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 22px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
   color: var(--ink);
 }
 
@@ -304,7 +342,7 @@ section:last-of-type {
 
 .work-caption strong {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .work-note {
@@ -317,9 +355,9 @@ section:last-of-type {
 /* Pricing */
 
 .price-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 8px;
   padding: 48px;
   margin-top: 32px;
 }
@@ -333,14 +371,21 @@ section:last-of-type {
 }
 
 .price-headline h3 {
-  font-size: 28px;
+  font-size: 26px;
   margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Archivo Black", sans-serif;
 }
 
 .price-amount {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Archivo Black", sans-serif;
   font-size: 28px;
   color: var(--accent);
+}
+
+.price-card p {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .price-card ul {
@@ -353,16 +398,16 @@ section:last-of-type {
 }
 
 .addons {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   padding-top: 24px;
   margin-top: 8px;
 }
 
 .addons h4 {
-  font-size: 15px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.6);
   margin: 0 0 16px;
 }
 
@@ -375,7 +420,7 @@ section:last-of-type {
 /* FAQ */
 
 .faq-item {
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(13, 13, 13, 0.15);
 }
 
 .faq-item:last-child {
@@ -386,9 +431,9 @@ section:last-of-type {
   cursor: pointer;
   list-style: none;
   padding: 24px 0;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Inter", sans-serif;
   font-size: 19px;
-  font-weight: 600;
+  font-weight: 800;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -401,9 +446,17 @@ section:last-of-type {
 
 .faq-item summary::after {
   content: "+";
-  color: var(--accent);
-  font-size: 24px;
+  color: var(--ink);
+  background: var(--accent);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.15s ease;
 }
 
@@ -426,7 +479,7 @@ section:last-of-type {
 }
 
 .final-cta h2 {
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(32px, 5.2vw, 50px);
 }
 
 /* Footer */
@@ -448,7 +501,7 @@ section:last-of-type {
 }
 
 .form-page h1 {
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(32px, 5.2vw, 50px);
   margin-bottom: 16px;
 }
 
@@ -464,7 +517,7 @@ section:last-of-type {
 
 .field label {
   display: block;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
   font-size: 16px;
 }
@@ -484,8 +537,8 @@ section:last-of-type {
   width: 100%;
   font: inherit;
   padding: 14px 16px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
   background: #fff;
   color: var(--ink);
 }
@@ -498,7 +551,7 @@ section:last-of-type {
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent);
 }
 
 .form-submit {
