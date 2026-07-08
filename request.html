@@ -14,7 +14,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2026070811">
+<link rel="stylesheet" href="styles.css?v=2026070812">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
 
@@ -33,29 +34,29 @@
 
       <form action="https://formspree.io/f/mgojqqzw" method="POST">
 
-        <div class="field">
+        <div class="field reveal" data-delay="0">
           <label for="brief">What's the brief?</label>
           <textarea id="brief" name="What's the brief" required></textarea>
         </div>
 
-        <div class="field">
+        <div class="field reveal" data-delay="1">
           <label for="deadline">What's the deadline?</label>
           <input type="text" id="deadline" name="What's the deadline" required>
         </div>
 
-        <div class="field">
+        <div class="field reveal" data-delay="2">
           <label for="audience">Who's the audience?</label>
           <input type="text" id="audience" name="Who's the audience" required>
         </div>
 
-        <div class="field">
+        <div class="field reveal" data-delay="3">
           <label for="budget">What's the production budget?</label>
           <input type="text" id="budget" name="What's the production budget" required>
         </div>
 
         <input type="hidden" name="_subject" value="New brief via Boring Brief">
 
-        <div class="form-submit">
+        <div class="form-submit reveal" data-delay="4">
           <button type="submit" class="btn">Send your brief</button>
         </div>
       </form>
@@ -66,10 +67,15 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap-wide">
-    &copy; 2026 Boring Brief
+  <div class="wrap-wide footer-row">
+    <span>&copy; 2026 Boring Brief &mdash; a service by TikScript Ltd</span>
+    <nav class="footer-links">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
   </div>
 </footer>
 
+<script src="scroll.js?v=2026070812"></script>
 </body>
 </html>

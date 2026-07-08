@@ -64,11 +64,135 @@ a {
   transform: none;
 }
 
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-56px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  will-change: opacity, transform;
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(56px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  will-change: opacity, transform;
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-drop {
+  opacity: 0;
+  transform: translateY(-32px);
+  transition: opacity 0.6s var(--ease), transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-drop.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-drop {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* Typewriter hero */
+
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--accent);
+  opacity: 1;
+  animation: cursor-blink 0.9s step-end infinite;
+}
+
+.typing-done .typewriter-cursor {
+  animation: cursor-blink 0.9s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-cursor {
+    display: none;
+  }
+}
+
+/* CTA wiggle */
+
+.btn {
+  animation: btn-wiggle 4.5s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+
+@keyframes btn-wiggle {
+  0%, 82%, 100% { transform: rotate(0deg); }
+  84% { transform: rotate(-3deg); }
+  86% { transform: rotate(3deg); }
+  88% { transform: rotate(-3deg); }
+  90% { transform: rotate(2deg); }
+  92% { transform: rotate(0deg); }
+}
+
+.btn:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    animation: none;
+  }
+}
+
+/* Confetti */
+
+.product-price-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  opacity: 0;
+  animation: confetti-burst 1.4s cubic-bezier(0.16, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes confetti-burst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy) + 60px)) rotate(var(--rot));
   }
 }
 
@@ -1064,6 +1188,35 @@ a {
   text-align: center;
 }
 
+.footer-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .footer-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
 /* Intake form page */
 
 .form-page {
@@ -1136,5 +1289,42 @@ a {
 }
 
 .back-link:hover {
+  color: var(--ink);
+}
+
+/* Legal pages */
+
+.legal-page {
+  padding-top: 160px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+
+.legal-wrap {
+  max-width: 760px;
+}
+
+.legal-body {
+  margin-top: 24px;
+}
+
+.legal-body h2 {
+  font-size: 18px;
+  margin: 40px 0 12px;
+}
+
+.legal-body h2:first-child {
+  margin-top: 0;
+}
+
+.legal-body p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.legal-body a {
   color: var(--ink);
 }
