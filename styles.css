@@ -248,7 +248,72 @@ a {
   vertical-align: top;
 }
 
+/* PHILOSOPHY (dark) */
+
+.philosophy-scene {
+  background: var(--ink);
+  color: #fff;
+}
+
+.philosophy-scene .beat {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.philosophy-scene .beat-pause {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.philosophy-scene .beat-final {
+  color: #fff;
+}
+
+.philosophy-scene .hero-cta {
+  margin-top: 56px;
+}
+
 /* SCENE 3 — RECOGNITION */
+
+.offer-sub {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(18px, 2.2vw, 24px);
+  color: var(--muted);
+  max-width: 42ch;
+  margin-top: 24px;
+  margin-bottom: 64px;
+}
+
+.offer-close {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.offer-close p {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  color: var(--muted);
+}
+
+.recognition-scene .hero-cta {
+  margin-top: 64px;
+}
+
+.big-list li {
+  position: relative;
+  padding-left: 34px;
+}
+
+.big-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--ink);
+  background: var(--accent);
+}
 
 .recognition-scene h2 {
   font-size: clamp(36px, 6.5vw, 88px);
@@ -337,6 +402,66 @@ a {
   color: var(--muted);
 }
 
+/* AUTHORITY */
+
+.authority-scene h2 {
+  font-size: clamp(32px, 5.6vw, 68px);
+  max-width: 18ch;
+  margin-bottom: 88px;
+}
+
+.authority-lines .beat {
+  font-size: clamp(20px, 2.6vw, 30px);
+  max-width: 30ch;
+}
+
+/* TRIGGERS */
+
+.triggers-scene h2 {
+  font-size: clamp(32px, 5.6vw, 64px);
+  max-width: 18ch;
+}
+
+.trigger-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(13, 13, 13, 0.15);
+  border: 1px solid rgba(13, 13, 13, 0.15);
+  margin-top: 24px;
+}
+
+@media (max-width: 780px) {
+  .trigger-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trigger-card {
+  background: #fff;
+  padding: 44px 40px;
+}
+
+.trigger-quote {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(19px, 2vw, 22px);
+  margin-bottom: 14px;
+}
+
+.trigger-body {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.trigger-bottom {
+  margin-top: 56px;
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(22px, 3vw, 32px);
+}
+
 /* SCENE 4 — JOURNEY */
 
 .journey-scene h2 {
@@ -382,6 +507,75 @@ a {
   background: var(--accent);
   padding: 4px 18px;
   display: inline-block;
+}
+
+/* PROCESS — horizontal timeline */
+
+.process-scene h2 {
+  font-size: clamp(32px, 5.6vw, 64px);
+  margin-bottom: 88px;
+  max-width: 16ch;
+}
+
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px 8px;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 220px;
+}
+
+.timeline-word {
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(16px, 1.6vw, 19px);
+}
+
+.timeline-detail {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.timeline-arrow {
+  font-size: 22px;
+  color: var(--accent);
+  -webkit-text-stroke: 1px var(--ink);
+  align-self: center;
+  padding: 0 4px;
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .timeline-step {
+    max-width: none;
+  }
+  .timeline-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+}
+
+.process-close {
+  margin-top: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.process-close p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: var(--muted);
 }
 
 /* SCENE 5 — WORK */
@@ -445,6 +639,13 @@ a {
 
 .case-panel-dark .case-beats span {
   -webkit-text-stroke: 0;
+}
+
+.case-stat {
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(32px, 5vw, 56px) !important;
+  margin-top: 8px;
 }
 
 .work-note {
@@ -519,6 +720,25 @@ a {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.55);
   margin-bottom: 36px;
+  max-width: 42ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-list-check li {
+  position: relative;
+  padding-left: 26px;
+  text-align: left;
+}
+
+.product-list-check li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
 }
 
 .product-fine {
